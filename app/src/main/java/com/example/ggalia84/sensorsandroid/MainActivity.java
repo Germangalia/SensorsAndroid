@@ -97,4 +97,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             }
         }
     }
+
+    //Apagar els sensors quan la aplicació no estigui visible.
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sensorManager.registerListener(this,sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sensorManager.unregisterListener(this);
+    }
 }
