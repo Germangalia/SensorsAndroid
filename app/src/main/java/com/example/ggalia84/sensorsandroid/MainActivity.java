@@ -58,12 +58,43 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     @Override
-    public void onSensorChanged(SensorEvent event) {
-
+    public void onAccuracyChanged(Sensor arg0, int arg1) {
     }
 
     @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+    public void onSensorChanged(SensorEvent arg0) {
+        synchronized (this){
+            float[] masData;
+            float x;
+            float y;
+            float z;
 
+            switch(arg0.sensor.getType()){
+                case Sensor.TYPE_PROXIMITY:
+                    masData = arg0.values;
+                    if(masData[0]==0){
+                        textViewAcelerometro.setTextSize(textViewAcelerometro.getTextSize()+10);
+                    }
+                    else{
+                        textViewAcelerometro.setTextSize(textViewAcelerometro.getTextSize()-10);
+                    }
+                    break;
+                case Sensor.TYPE_ACCELEROMETER:
+                    masData = arg0.values;
+                    x = masData[0];
+                    y = masData[1];
+                    z = masData[2];
+                    textViewAcelerometro.setText("x: " + x + "\ny: "+y + "\nz: "+z);
+                    break;
+                case Sensor.TYPE_ORIENTATION:
+                    masData = arg0.values;
+                    x = masData[0];
+                    y = masData[1];
+                    textViewOrientacion.setText("x: " + x + "\ny: "+y);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
