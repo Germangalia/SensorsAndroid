@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">SensorsAndroid</string>
-    <string name="hello">Sensor de Moviment</string>
-    <string name="etiqSensorDeMovimiento">Accelerometre</string>
-    <string name="etiqSensorDeOrientacion">Orientació</string>
+    <string name="hello">Sensors</string>
+    <string name="SensorDeMovimient">Accelerometre</string>
+    <string name="SensorDeOrientacio">Orientació</string>
 </resources>

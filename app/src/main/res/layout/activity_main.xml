@@ -6,7 +6,7 @@
     <TextView android:id = "@+id/etiqSensorDeMovimiento"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/etiqSensorDeMovimiento">
+        android:text="@string/SensorDeMovimient">
     </TextView>
     <TextView
         android:id = "@+id/sensorDeMovimiento"
@@ -18,7 +18,7 @@
         android:id = "@+id/etiqSensorDeOrientacion"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/etiqSensorDeOrientacion">
+        android:text="@string/SensorDeOrientacio">
     </TextView>
     <TextView
         android:id="@+id/sensorDeOrientacion"
